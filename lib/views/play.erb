@@ -2,3 +2,7 @@
 <div class="hit-points">
   <%= @player_two_name %>: 60/60 HP
 </div>
+<form method="post" action="/attack">
+  <button type="submit" name="attack" value="true">Attack</button>
+</form>
+<%= 'You attacked player 2' if @attack  %>

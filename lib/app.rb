@@ -17,10 +17,14 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_one_name = session[:player_one_name]
     @player_two_name = session[:player_two_name]
+    @attack = session[:attack]
     erb(:play)
   end
 
-
+  post '/attack' do
+    session[:attack] = params[:attack]
+    redirect ('/play')
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0
