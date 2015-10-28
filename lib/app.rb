@@ -23,6 +23,7 @@ class Battle < Sinatra::Base
 
   post '/attack' do
     $attack = params[:attack]
+    $player_two.attacked
     redirect ('/play')
   end
 
