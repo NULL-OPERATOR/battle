@@ -1,6 +1,6 @@
 <%= @player_one_name %> vs <%= @player_two_name %>
 <div class="hit-points">
-  <%= @player_two_name %>: <%= $player_two.hit_points %>/60 HP
+  <%= @player_two_name %>: <%= @player_two_hitpoints %>/60 HP
 </div>
 <form method="post" action="/attack">
   <button type="submit" name="attack" value="true">Attack</button>
