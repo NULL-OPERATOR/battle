@@ -11,5 +11,10 @@ describe Player do
   it 'has hit points' do
     expect(raedgar.hit_points).to eq 60
   end
-
+  
+  describe '#attacked' do
+    it 'reduces hitpoints by 1' do
+      expect {raedgar.attacked}.to change {raedgar.hit_points}.by(-1)
+    end
+  end
 end
