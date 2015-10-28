@@ -16,6 +16,6 @@ feature 'Display player into' do
     fill_in(:player_one_name, with: 'Radu')
     fill_in(:player_two_name, with: 'Sam')
     click_button('Submit')
-    expect(page).to have_css 'div.hit-points'
+    find('div.hit-points', text: 'Sam: 60/60 HP')
   end
 end
