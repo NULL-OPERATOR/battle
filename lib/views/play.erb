@@ -1,4 +1,15 @@
 <% if @attacking_player == 1 %>
+
+    <embed name="myMusic" loop="false" hidden="true" src="Sudden.mp3"></embed>
+
+  <style type="text/css">
+  body {
+    color: green;
+    font-size: 40px;
+    font-style: italic;
+    font-family: helvetica;
+    background-color: #00FF99 }
+  </style>
   <%= @player_one_name %> vs <%= @player_two_name %>
   <div class="hit-points">
     <%= @player_one_name %>: <%= @player_one_hitpoints %>/60 HP</br>
@@ -6,10 +17,20 @@
   </div>
   Player <%=@player_one_name%> is attacking
   <form method="post" action="/attack">
-    <button type="submit" name="attack" value="true">Attack</button>
+    <button type="submit" name="attack" value="true">
+      <h2>Attack</h2></button>
   </form>
 
 <% else %>
+
+  <embed name="myMusic" loop="false" hidden="true" src="Suprise.mp3"></embed>
+<style type="text/css">
+body {
+  color: violet;
+  font-size: 40px;
+  font-family: helvetica;
+  background-color: #CC00FF }
+</style>
   <%= @player_two_name %> vs <%= @player_one_name %>
   <div class="hit-points">
     <%= @player_one_name %>: <%= @player_one_hitpoints %>/60 HP</br>
@@ -17,7 +38,7 @@
   </div>
   Player <%=@player_two_name%> is attacking
   <form method="post" action="/attack">
-    <button type="submit" name="attack" value="true">Attack</button>
+    <button type="submit" name="attack" value="true"><h2>Attack</h2></button>
   </form>
 
 <% end %>

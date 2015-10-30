@@ -14,10 +14,12 @@ class Battle < Sinatra::Base
     player_one = Player.new(params[:player_one_name])
     player_two = Player.new(params[:player_two_name])
     $battle_game = Game.new(player_one, player_two)
+    # @turn = 0
     redirect ('/play')
   end
 
   get '/play' do
+    # @turn += 1
     @player_one_name = $battle_game.player_one.name
     @player_two_name = $battle_game.player_two.name
     @player_one_hitpoints = $battle_game.player_one.hit_points
@@ -31,6 +33,5 @@ class Battle < Sinatra::Base
     redirect ('/play')
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end
