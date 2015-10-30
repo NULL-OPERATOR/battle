@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'web_helpers'
 
 feature 'Display player into' do
   scenario 'see winner by displaying player hit points' do

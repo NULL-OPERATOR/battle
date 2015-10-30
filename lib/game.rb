@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :player_one, :player_two, :attacking_player
+  attr_reader :attacking_player, :player_one, :player_two
 
   def initialize(player_one, player_two)
     @player_one = player_one
@@ -13,11 +13,31 @@ class Game
     switcher
   end
 
+  def end?
+    (p1_hp == 0 || p2_hp == 0) ? true : false
+  end
+
+  def p1_hp
+    @player_one.hit_points
+  end
+
+  def p2_hp
+    @player_two.hit_points
+  end
+
+  def p1_name
+    @player_one.name
+  end
+
+  def p2_name
+    @player_two.name
+  end
+
   private
 
   def switcher
-    if @attacking_player == 1 ? @attacking_player = 2 : @attacking_player = 1
-    end
+    @attacking_player == 1 ? @attacking_player = 2 : @attacking_player = 1
   end
+
 
 end

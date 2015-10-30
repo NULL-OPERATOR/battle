@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'web_helpers'
 
 feature 'Attack another player' do
   scenario 'shows who is attacking' do
