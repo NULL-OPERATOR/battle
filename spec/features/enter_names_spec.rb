@@ -13,11 +13,3 @@ feature 'Display player into' do
     find('div.hit-points', text: 'Sam: 60/60 HP')
   end
 end
-
-feature 'Attack another player' do
-  scenario 'shows a confirmation of the attack' do
-    sign_in_and_play
-    click_button('Attack')
-    expect(page).to have_content 'You attacked player 2'
-  end
-end

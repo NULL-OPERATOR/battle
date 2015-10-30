@@ -1,8 +1,23 @@
-<%= @player_one_name %> vs <%= @player_two_name %>
-<div class="hit-points">
-  <%= @player_two_name %>: <%= @player_two_hitpoints %>/60 HP
-</div>
-<form method="post" action="/attack">
-  <button type="submit" name="attack" value="true">Attack</button>
-</form>
-<%= 'You attacked player 2' if $attack  %>
+<% if @attacking_player == 1 %>
+  <%= @player_one_name %> vs <%= @player_two_name %>
+  <div class="hit-points">
+    <%= @player_one_name %>: <%= @player_one_hitpoints %>/60 HP</br>
+    <%= @player_two_name %>: <%= @player_two_hitpoints %>/60 HP
+  </div>
+  Player <%=@player_one_name%> is attacking
+  <form method="post" action="/attack">
+    <button type="submit" name="attack" value="true">Attack</button>
+  </form>
+
+<% else %>
+  <%= @player_two_name %> vs <%= @player_one_name %>
+  <div class="hit-points">
+    <%= @player_one_name %>: <%= @player_one_hitpoints %>/60 HP</br>
+    <%= @player_two_name %>: <%= @player_two_hitpoints %>/60 HP
+  </div>
+  Player <%=@player_two_name%> is attacking
+  <form method="post" action="/attack">
+    <button type="submit" name="attack" value="true">Attack</button>
+  </form>
+
+<% end %>

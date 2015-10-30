@@ -7,6 +7,10 @@ describe Game do
 
   subject { described_class.new(player1, player2) }
 
+  before(:each) do
+    allow(player2).to receive(:attacked)
+  end
+
   it 'retrieves player one' do
     expect(subject.player_one).to eq player1
   end
@@ -22,4 +26,8 @@ describe Game do
     end
   end
 
+  it 'switches when an attack is triggered' do
+    subject.attack
+    expect(subject.attacking_player).to eq 2
+  end
 end
