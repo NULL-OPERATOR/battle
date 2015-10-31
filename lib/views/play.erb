@@ -10,15 +10,28 @@
     font-family: helvetica;
     background-color: #00FF99 }
   </style>
-  <%= @player_one_name %> vs <%= @player_two_name %>
+  <%= @player_one_name %> -- vs -- <%= @player_two_name %>
   <div class="hit-points">
     <%= @player_one_name %>: <%= @player_one_hitpoints %>/60 HP</br>
     <%= @player_two_name %>: <%= @player_two_hitpoints %>/60 HP
   </div>
   Player <%=@player_one_name%> is attacking
   <form method="post" action="/attack">
-    <button type="submit" name="attack" value="true">
-      <h2>Attack</h2></button>
+    <button type="submit"
+            name="attack"
+            value="true"
+            style="background-color:#CC00FF;border:none; color:black;">
+    <h2>Attack WITH -</h2></button>
+    <button type="submit"
+            name="attack"
+            value="true"
+            style="background-color:#CC00FF;border:none; color:black;">
+    <h2>Attack WITH POTATO</h2></button>
+    <button type="submit"
+            name="attack"
+            value="true"
+            style="background-color:#CC00FF;border:none; color:black;">
+    <h2>Attack WITH RSPEC</h2></button>
   </form>
 
 <% else %>
@@ -31,14 +44,28 @@ body {
   font-family: helvetica;
   background-color: #CC00FF }
 </style>
-  <%= @player_two_name %> vs <%= @player_one_name %>
+  <%= @player_two_name %> -- vs -- <%= @player_one_name %>
   <div class="hit-points">
     <%= @player_one_name %>: <%= @player_one_hitpoints %>/60 HP</br>
     <%= @player_two_name %>: <%= @player_two_hitpoints %>/60 HP
   </div>
   Player <%=@player_two_name%> is attacking
   <form method="post" action="/attack">
-    <button type="submit" name="attack" value="true"><h2>Attack</h2></button>
+    <button type="submit"
+            name="attack"
+            value="true"
+            style="background-color:#00FF99;border:none; color:black;">
+    <h2>Attack WITH -</h2></button>
+    <button type="submit"
+            name="attack"
+            value="true"
+            style="background-color:#00FF99;border:none; color:black;">
+    <h2>Attack WITH POTATO</h2></button>
+    <button type="submit"
+            name="attack"
+            value="true"
+            style="background-color:#00FF99;border:none; color:black;">
+    <h2>Attack WITH RSPEC</h2></button>
   </form>
 
 <% end %>
